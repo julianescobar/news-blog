@@ -19,4 +19,6 @@ Route::get('/', function () {
 
 use App\Http\Controllers\NoticiaController;
 
-Route::get('/', [NoticiaController::class, 'index']);
+Route::get('/noticias', [NoticiaController::class, 'index'])->name('noticias.index');
+Route::get('/noticias/create', [NoticiaController::class, 'create'])->name('noticias.create');
+Route::post('/noticias', [NoticiaController::class, 'store'])->name('noticias.store');
